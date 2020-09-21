@@ -11,6 +11,11 @@ html{
     font-family: "Lato", Arial, sans-serif;
 }
 
+embed{
+    width: 0px;
+    height: 0px;
+}
+
 #title{
     position:absolute;
     top:50%;
@@ -20,6 +25,7 @@ html{
 
 h1{
     font-size: 36rem;
+    animation: titleColor 5s infinite;
 }
 
 #textBG{
@@ -30,11 +36,10 @@ p{
     font-size: 12px;
     white-space:pre;
     display:inline-block;
-    animation: textBgColorTwo 5s infinite;
 } 
 
 p:nth-child(odd) {
-    animation: textBgColor 5s infinite;
+    color:black;
 }
 
 section{
@@ -42,17 +47,18 @@ section{
     height: 100vh;
     color: #fff;
     background: linear-gradient(-45deg, #707070, #383838);
+    background-size: 400% 400%;
     animation: change 10s ease-in-out infinite;
 }
 
-@keyframes textBgColor{
+@keyframes titleColor{
     0% { color: black; }
     50% { color: white; }
     100% { color: black; }
 }
 
-@keyframes textBgColorTwo{
-    0% { color: white; }
-    50% { color: black; }
-    100% { color: white; }
+@keyframes change {
+    0%{ background-position: 0 50%; }
+    50%{ background-position: 100% 50%; }
+    100%{ background-position: 0 50%; }
 }
