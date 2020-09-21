@@ -28,14 +28,13 @@ h1{
 }
 
 p{
-    animation: textBgColor2 10s infinite;
     font-size: 11px;
     white-space:pre;
     display:inline-block;
 } 
 
 p:nth-child(odd) {
-    animation: textBgColor1 10s infinite;
+    animation: textBgColor 5s infinite;
 }
 
 section{
@@ -52,14 +51,8 @@ section{
     100% { color: red; }
 }
 
-@keyframes textBgColor1{
+@keyframes textBgColor{
     0% { color: red; }
     50% { color: white; }
     100% { color: red; }
-}
-
-@keyframes textBgColor2{
-    0% { color: white; }
-    50% { color: white; }
-    100% { color: white; }
 }
