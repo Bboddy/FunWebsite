@@ -23,6 +23,10 @@ h1{
     animation: titleColor 5s ease-in-out infinite;
 }
 
+#textBG{
+    width: 111%;
+}
+
 p{
     color: #fff;
     font-size: 11px;
