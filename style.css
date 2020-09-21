@@ -16,9 +16,9 @@ embed{
     height: 0px;
 }
 
-#title{
+#main{
     position:absolute;
-    top:50%;
+    margin-top: 450px;
     left:50%;
     transform: translate(-50%, -50%);
     z-index: 1;
@@ -27,6 +27,16 @@ embed{
 h1{
     font-size: 36rem;
     animation: titleColor 5s infinite;
+}
+
+ul{
+    word-spacing: 15px;
+}
+
+a{
+    font-size: 18px;
+    text-decoration: none;
+    color: #e6e6e6;
 }
 
 #textBG{

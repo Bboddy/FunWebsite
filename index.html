@@ -4,13 +4,35 @@
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="favicon.ico" type="image/ico">
     <meta charset="UTF-8">
-    <title>e z</title>
-	<iframe src="music.mp3" allow="autoplay" style="display:none" id="iframeAudio"></iframe> 
-</head>
-<body>
+    <!-- <iframe src="music.mp3" allow="autoplay" style="display:none" id="iframeAudio"></iframe>  -->
+    <title>&nbsp;D9rk</title>
+	<script type="text/javascript">
+		var titleText = document.title;
+		function titleMarquee() {
+			titleText = titleText.substring(1, titleText.length) + titleText.substring(0, 1);
+			document.title = titleText;
+			setTimeout("titleMarquee()", 450);
+		}
+	</script>
+	</head>
+<body onload="titleMarquee()">
 	<section>
-		<div id="title">
+		<div id="main">
 			<h1>D9</h1>
+			<h2>
+				<marquee>
+	              <ul>
+	                <a href="https://www.youtube.com/D9rkyt" target="_blank"><i class="st">youtube</a>
+	                 -  
+	                <a href="https://easy4.me/" target="_blank"><i class="st">easy4.me</a>
+	                 -  
+	                <a href="https://steamcommunity.com/id/D9rkYT/" target="_blank"><i class="st">steam</a>
+	                 -  
+	                <a>D9rk#6973</a>
+	              </ul>
+	           </marquee> 
+			</h2>
+			<iframe id="youtube" width="560" height="315" src="https://www.youtube.com/embed/-OPbYZFulKA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 		</div>
 		<div id="textBG">
 			<!-- <p>D9rk</p> -->
