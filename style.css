@@ -26,10 +26,11 @@ embed{
 h1{
     font-size: 36rem;
     animation: titleColor 5s infinite;
+    cursor: pointer;
 }
 
 #youtube{
-    margin-top: 150px;
+    margin-top: 50px;
 }
 
 h2{
@@ -44,26 +45,32 @@ h2:hover{
 }
 
 h3{
+    font-size: 18px;
     align-items: center;
     text-align: center;
     /*width: 100px;*/
     margin: 0;
     border: 2px solid white;
+    text-shadow: 0 0 4px black;
+    cursor: pointer;
 }
 
 .button {
   transition-duration: 0.4s;
+  cursor: pointer;
 }
 
 .button:hover {
   background-color: #383838;
   color: white;
+  cursor: pointer;
 }
 
 ul{
     word-spacing: 15px;
     text-shadow: 0 0 4px black;
     color: #fff;
+    cursor: pointer;
 }
 
 a{
@@ -96,6 +103,7 @@ section{
     background-size: 400% 400%;
     position: relative;
     animation: change 10s ease-in-out infinite;
+    background-repeat: repeat-y;
 }
 
 @keyframes titleColor{

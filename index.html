@@ -18,7 +18,7 @@
 <body onload="titleMarquee()">
 	<section>
 		<div id="main">
-			<h1>D9</h1>
+			<h1 onclick="aids()">D9</h1>
 			<h2>
 				<marquee>
 	              <ul>
@@ -32,7 +32,7 @@
 	              </ul>
 	           </marquee> 
 			</h2>
-			<h3 class="button" onclick="showYoutube()">Show More</h3>
+			<h3 class="button" onclick="showYoutube()">Latest Video</h3>
 			<iframe id="youtube" style="display: none;" class="latestVideoEmbed" vnum='0' cid="UCHU2MdtQemMA3-9cSnmjrlg" width="600" height="340" frameborder="0" allowfullscreen></iframe>
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 			<script>
@@ -54,7 +54,7 @@
 				}
 			</script>
 		</div>
-		<div id="textBG">
+		<div id="textBG" style="display: none;">
 			<!-- <p>D9rk</p> -->
 		</div>
 	</section>
@@ -63,8 +63,16 @@
 		for (i=1; i<=8000; i++) {x = x + "<p> D9rk </p>";}
 		document.getElementById("textBG").innerHTML = x;
 		console.log('☑ Background Loaded')
-	</script>
-	<script>
+		
+		function aids(){
+			x = document.getElementById("textBG")
+			if (x.style.display === "none") {
+		    	x.style.display = "block";
+		  	} else {
+		    	x.style.display = "none";
+		  	}
+		}
+
 		function showYoutube() {
 		  	x = document.getElementById("youtube");
 		  	if (x.style.display === "none") {
