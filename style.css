@@ -18,7 +18,7 @@ embed{
 
 #main{
     position:absolute;
-    margin-top: 450px;
+    top:50%;
     left:50%;
     transform: translate(-50%, -50%);
     z-index: 1;
@@ -29,14 +29,48 @@ h1{
     animation: titleColor 5s infinite;
 }
 
+#youtube{
+    margin-top: 150px;
+}
+
+h2{
+    padding: 5px;
+    border: 2px solid white;
+    margin-bottom: 15px;
+    transition-duration: 0.4s;
+}
+
+h2:hover{
+    background-color: #383838;
+}
+
+h3{
+    align-items: center;
+    text-align: center;
+    /*width: 100px;*/
+    margin: 0;
+    border: 2px solid white;
+}
+
+.button {
+  transition-duration: 0.4s;
+}
+
+.button:hover {
+  background-color: #383838;
+  color: white;
+}
+
 ul{
     word-spacing: 15px;
+    text-shadow: 0 0 4px black;
+    color: #fff;
 }
 
 a{
     font-size: 18px;
     text-decoration: none;
-    color: #e6e6e6;
+    color: #fff;
 }
 
 #textBG{

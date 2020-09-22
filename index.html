@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="favicon.ico" type="image/ico">
     <meta charset="UTF-8">
-    <!-- <iframe src="music.mp3" allow="autoplay" style="display:none" id="iframeAudio"></iframe>  -->
+    <iframe src="music.mp3" allow="autoplay" style="display:none" id="iframeAudio"></iframe> 
     <title>&nbsp;D9rk</title>
 	<script type="text/javascript">
 		var titleText = document.title;
@@ -32,7 +32,28 @@
 	              </ul>
 	           </marquee> 
 			</h2>
-			<iframe id="youtube" width="560" height="315" src="https://www.youtube.com/embed/-OPbYZFulKA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			<h3 class="button" onclick="showYoutube()">Show More</h3>
+			<iframe id="youtube" style="display: none;" class="latestVideoEmbed" vnum='0' cid="UCHU2MdtQemMA3-9cSnmjrlg" width="600" height="340" frameborder="0" allowfullscreen></iframe>
+			<iframe id="youtube1" style="display: none;" class="latestVideoEmbed" vnum='1' cid="UCHU2MdtQemMA3-9cSnmjrlg" width="600" height="340" frameborder="0" allowfullscreen></iframe>
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+			<script>
+				var reqURL = "https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent("https://www.youtube.com/feeds/videos.xml?channel_id=");
+				function loadVideo(iframe) {
+				  $.getJSON(reqURL + iframe.getAttribute('cid'),
+				    function(data) {
+				      var videoNumber = (iframe.getAttribute('vnum') ? Number(iframe.getAttribute('vnum')) : 0);
+				      console.log(videoNumber);
+				      var link = data.items[videoNumber].link;
+				      id = link.substr(link.indexOf("=") + 1);
+				      iframe.setAttribute("src", "https://youtube.com/embed/" + id + "?controls=0&autoplay=0");
+				    }
+				  );
+				}
+				var iframes = document.getElementsByClassName('latestVideoEmbed');
+				for (var i = 0, len = iframes.length; i < len; i++) {
+				  loadVideo(iframes[i]);
+				}
+			</script>
 		</div>
 		<div id="textBG">
 			<!-- <p>D9rk</p> -->
@@ -43,6 +64,23 @@
 		for (i=1; i<=8000; i++) {x = x + "<p> D9rk </p>";}
 		document.getElementById("textBG").innerHTML = x;
 		console.log('☑ Background Loaded')
+	</script>
+	<script>
+		function showYoutube() {
+		  	x = document.getElementById("youtube");
+		  	if (x.style.display === "none") {
+		    	x.style.display = "block";
+		  	} else {
+		    	x.style.display = "none";
+		  	}
+
+		  	x = document.getElementById("youtube1");
+		  	if (x.style.display === "none") {
+		    	x.style.display = "block";
+		  	} else {
+		    	x.style.display = "none";
+		  	}
+		}
 	</script>
 </body>
 </html>
