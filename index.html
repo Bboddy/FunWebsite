@@ -33,7 +33,7 @@
 	           </marquee> 
 			</h2>
 			<h3 class="button" onclick="showYoutube()">Latest Video</h3>
-			<iframe id="youtube" style="display: none;" class="latestVideoEmbed" vnum='0' cid="UCnEiGCE13SUI7ZvojTAVBKw" width="600" height="340" frameborder="0" allowfullscreen></iframe>
+			<iframe id="youtube" style="display: none;" class="latestVideoEmbed" vnum='0' cid="UC-lHJZR3Gqxm24_Vd_AJ5Yw" width="600" height="340" frameborder="0" allowfullscreen></iframe>
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 			<script>
 				var reqURL = "https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent("https://www.youtube.com/feeds/videos.xml?channel_id=");
@@ -41,7 +41,6 @@
 				  $.getJSON(reqURL + iframe.getAttribute('cid'),
 				    function(data) {
 				      var videoNumber = (iframe.getAttribute('vnum') ? Number(iframe.getAttribute('vnum')) : 0);
-				      console.log(videoNumber);
 				      var link = data.items[videoNumber].link;
 				      id = link.substr(link.indexOf("=") + 1);
 				      iframe.setAttribute("src", "https://youtube.com/embed/" + id + "?controls=0&autoplay=0");
@@ -60,7 +59,7 @@
 	</section>
 	<script>
 		var x ="", i;
-		for (i=1; i<=8000; i++) {x = x + "<p> ThirtySix </p>";}
+		for (i=1; i<=5100; i++) {x = x + "<p> ThirtySix </p>";}
 		document.getElementById("textBG").innerHTML = x;
 
 		function spamBG(){
@@ -78,10 +77,10 @@
 		  	x = document.getElementById("youtube");
 		  	if (x.style.display === "none") {
 		    	x.style.display = "block";
-		    	console.log('☑ Background Loaded')
+		    	console.log('☑ Youtube Loaded')
 		  	} else {
 		    	x.style.display = "none";
-		    	console.log('☒ Background Loaded')
+		    	console.log('☒ Youtube Loaded')
 		  	}
 		}
 	</script>
