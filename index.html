@@ -62,14 +62,15 @@
 		var x ="", i;
 		for (i=1; i<=8000; i++) {x = x + "<p> D9rk </p>";}
 		document.getElementById("textBG").innerHTML = x;
-		console.log('☑ Background Loaded')
-		
+
 		function aids(){
 			x = document.getElementById("textBG")
 			if (x.style.display === "none") {
 		    	x.style.display = "block";
+		    	console.log('☑ Background Loaded')
 		  	} else {
 		    	x.style.display = "none";
+		    	console.log('☒ Background Unloaded')
 		  	}
 		}
 
@@ -77,15 +78,10 @@
 		  	x = document.getElementById("youtube");
 		  	if (x.style.display === "none") {
 		    	x.style.display = "block";
+		    	console.log('☑ Background Loaded')
 		  	} else {
 		    	x.style.display = "none";
-		  	}
-
-		  	x = document.getElementById("youtube1");
-		  	if (x.style.display === "none") {
-		    	x.style.display = "block";
-		  	} else {
-		    	x.style.display = "none";
+		    	console.log('☒ Background Loaded')
 		  	}
 		}
 	</script>
