@@ -16,47 +16,45 @@
 	</script>
 	</head>
 <body onload="titleMarquee()">
-	<section>
-		<div id="main">
-			<h1 onclick="spamBG()">36</h1>
-			<h2>
-				<marquee>
-	              <ul>
-	                <a href="https://www.youtube.com/user/thegatesnotes" target="_blank"><i class="st">youtube</a>
-	                 -  
-	                <a href="https://microsoft.com" target="_blank"><i class="st">website</a>
-	                 -  
-	                <a href="https://steamcommunity.com/" target="_blank"><i class="st">steam</a>
-	                 -  
-	                <a href="https://discord.com/" target="_blank"><i class="st">discord</a>
-	              </ul>
-	           </marquee> 
-			</h2>
-			<h3 class="button" onclick="showYoutube()">Latest Video</h3>
-			<iframe id="youtube" style="display: none;" class="latestVideoEmbed" vnum='0' cid="UC-lHJZR3Gqxm24_Vd_AJ5Yw" width="600" height="340" frameborder="0" allowfullscreen></iframe>
-			<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-			<script>
-				var reqURL = "https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent("https://www.youtube.com/feeds/videos.xml?channel_id=");
-				function loadVideo(iframe) {
-				  $.getJSON(reqURL + iframe.getAttribute('cid'),
-				    function(data) {
-				      var videoNumber = (iframe.getAttribute('vnum') ? Number(iframe.getAttribute('vnum')) : 0);
-				      var link = data.items[videoNumber].link;
-				      id = link.substr(link.indexOf("=") + 1);
-				      iframe.setAttribute("src", "https://youtube.com/embed/" + id + "?controls=0&autoplay=0");
-				    }
-				  );
-				}
-				var iframes = document.getElementsByClassName('latestVideoEmbed');
-				for (var i = 0, len = iframes.length; i < len; i++) {
-				  loadVideo(iframes[i]);
-				}
-			</script>
-		</div>
-		<div id="textBG" style="display: none;">
-			<!-- <p>36</p> -->
-		</div>
-	</section>
+	<div id="main">
+		<h1 onclick="spamBG()">36</h1>
+		<h2>
+			<marquee>
+              <ul>
+                <a href="https://www.youtube.com/user/thegatesnotes" target="_blank"><i class="st">youtube</a>
+                 -  
+                <a href="https://microsoft.com" target="_blank"><i class="st">website</a>
+                 -  
+                <a href="https://steamcommunity.com/" target="_blank"><i class="st">steam</a>
+                 -  
+                <a href="https://discord.com/" target="_blank"><i class="st">discord</a>
+              </ul>
+           </marquee> 
+		</h2>
+		<h3 class="button" onclick="showYoutube()">Latest Video</h3>
+		<iframe id="youtube" style="display: none;" class="latestVideoEmbed" vnum='0' cid="UC-lHJZR3Gqxm24_Vd_AJ5Yw" width="600" height="340" frameborder="0"></iframe>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script>
+			var reqURL = "https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent("https://www.youtube.com/feeds/videos.xml?channel_id=");
+			function loadVideo(iframe) {
+			  $.getJSON(reqURL + iframe.getAttribute('cid'),
+			    function(data) {
+			      var videoNumber = (iframe.getAttribute('vnum') ? Number(iframe.getAttribute('vnum')) : 0);
+			      var link = data.items[videoNumber].link;
+			      id = link.substr(link.indexOf("=") + 1);
+			      iframe.setAttribute("src", "https://youtube.com/embed/" + id + "?controls=0&autoplay=0");
+			    }
+			  );
+			}
+			var iframes = document.getElementsByClassName('latestVideoEmbed');
+			for (var i = 0, len = iframes.length; i < len; i++) {
+			  loadVideo(iframes[i]);
+			}
+		</script>
+	</div>
+	<div id="textBG" style="display: none;">
+		<!-- <p>36</p> -->
+	</div>
 	<script>
 		var x ="", i;
 		for (i=1; i<=5100; i++) {x = x + "<p> ThirtySix </p>";}
